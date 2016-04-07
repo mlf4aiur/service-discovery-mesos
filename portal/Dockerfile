@@ -1,6 +1,6 @@
 FROM ruby:2-alpine
 
-ENV LISTEN_PORT 4567
+ENV PORT0 4567
 
 RUN mkdir -p /myapp
 WORKDIR /myapp

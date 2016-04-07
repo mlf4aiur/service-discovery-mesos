@@ -6,6 +6,9 @@ require 'resolv'
 
 set :bind, '0.0.0.0'
 
+listen_port = ENV['PORT0'] ? ENV['PORT0'] : 4567
+set :port, listen_port
+
 # The main web page.
 get '/' do
   redirect '/index.html'
