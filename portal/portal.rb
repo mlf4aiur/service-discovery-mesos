@@ -49,7 +49,7 @@ def lookup_stock(stock)
   res.body if res.is_a?(Net::HTTPSuccess)
 end
 
-def get_full_service_name(service_name):
+def get_full_service_name(service_name)
   if ENV['SUFFIX']
     dns_suffix = ENV['SUFFIX']
   else
@@ -79,5 +79,6 @@ def lookup_service_by_http(service_name)
   res = Net::HTTP.get_response(uri)
   if res.is_a?(Net::HTTPSuccess)
     result = JSON.parse(res.body).sample
-  return result['ip'], result['port']
+    return result['ip'], result['port']
+  end
 end
