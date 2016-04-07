@@ -53,7 +53,7 @@ def get_full_service_name(service_name)
   if ENV['SUFFIX']
     dns_suffix = ENV['SUFFIX']
   else
-    dns_suffix = '._tcp.marathon.mesos'
+    dns_suffix = '_tcp.marathon.mesos'
   end
   "_#{service_name}.#{dns_suffix}"
 end
