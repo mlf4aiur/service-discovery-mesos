@@ -1,6 +1,14 @@
-FROM ruby:2.1-onbuild
-EXPOSE 4567
+FROM ruby:2-alpine
 
-RUN chmod u+x ./stocks.rb
+ENV LISTEN_PORT 4567
+
+RUN mkdir -p /myapp
+WORKDIR /myapp
+
+COPY . /myapp
+
+RUN bundle config --global frozen 1 \
+    && bundle install \
+    && chmod u+x ./stocks.rb
 
 CMD ["./stocks.rb"]

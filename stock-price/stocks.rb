@@ -6,6 +6,9 @@ require 'csv'
 
 set :bind, '0.0.0.0'
 
+listen_port = ENV['LISTEN_PORT'] ? ENV['LISTEN_PORT'] : 4567
+set :port, listen_port
+
 # The URI to do the stock symbol lookup.
 # Returns a JSON document with stock name and price.
 get '/stock/:name' do

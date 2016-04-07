@@ -6,6 +6,9 @@ require 'logger'
 
 set :bind, '0.0.0.0'
 
+listen_port = ENV['LISTEN_PORT'] ? ENV['LISTEN_PORT'] : 4567
+set :port, listen_port
+
 # do the configuration of the web server
 configure do
 
